@@ -1,0 +1,136 @@
+@import url(/Blog_CSS/system_design_1.css);
+
+#main-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 150px 1fr 150px;
+    grid-template-areas: 
+    "hd"
+    "cont"
+    "ft";
+    margin: 10px;
+}
+
+.header {
+    grid-area: hd;
+    margin: 10px;
+}
+
+.content-container {
+    grid-area: cont;
+    margin: 10px;
+}
+
+#footer {
+    grid-area: ft;
+    margin: 10px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.image-sideBar {
+    width: 100px;
+    padding: 50px;
+}
+
+.blog-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 15px;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: space-around; */
+}
+
+.blog-post {
+    border: 1px solid darkgrey;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+
+/* MEDIA QUERY FOR MEDIUM SCREENS */
+@media (min-width: 768px) and (max-width: 1000px) {
+    #main-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 150px 1fr 150px;
+        grid-template-areas: 
+        "hd hd hd hd hd hd hd hd"
+        "cont cont cont cont cont cont cont cont"
+        "ft ft ft ft ft ft ft ft";
+        margin: 10px;
+        min-height: 100vh;
+    }
+
+    .content-container {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr) ;
+        grid-template-rows: 1fr 300px;
+        grid-template-areas: 
+        "sd sd sd sd sd sd sd sd sd "
+        "blog blog blog blog blog blog blog blog blog";
+        justify-content: center;
+        grid-area: cont;
+    }
+
+    .sidebar {
+        grid-area: sd;
+    }
+
+    .blog-container {
+        /* grid-area: blog;
+        flex-direction: row;
+        flex-wrap: wrap; */
+        grid-area: blog;
+        grid-template-columns: repeat(2, 1fr);
+          
+    }
+
+}
+
+/* MEDIA QUERY FOR LARGE SCREENS */
+@media (min-width: 1001px) {
+    #main-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 150px 1fr 150px;
+        grid-template-areas: 
+        "hd hd hd hd hd hd hd hd"
+        "cont cont cont cont cont cont cont cont"
+        "ft ft ft ft ft ft ft ft";
+        margin: 10px;
+        min-height: 100vh;
+    }
+
+    .content-container {
+        display: grid;
+        grid-template-columns: repeat(9, 1fr) ;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "sd sd blog blog blog blog blog blog margn";
+        justify-content: center;
+    }
+
+    .sidebar {
+        grid-area: sd;
+    }
+
+
+
+    .blog-container {
+        /* grid-area: blog;
+        flex-direction: row;
+        flex-wrap: wrap; */
+        grid-area: blog;
+        grid-template-columns: repeat(3, 1fr);
+          
+    }
+
+    .right-mrgn {
+        grid-area: margn;
+    }
+}
