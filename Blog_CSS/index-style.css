@@ -1,9 +1,11 @@
-@import url(/Blog_CSS/system_design_1.css);
+@import url(/Blog_CSS/system-fonts-1.css);
+@import url(/Blog_CSS/system-colors.css);
+@import url(/Blog_CSS/system-buttons.css);
 
 #main-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 150px 1fr 150px;
+    grid-template-rows: 250px 1fr 150px;
     grid-template-areas: 
     "hd"
     "cont"
@@ -11,7 +13,7 @@
     margin: 10px;
 }
 
-.header {
+header {
     grid-area: hd;
     margin: 10px;
 }
@@ -21,7 +23,7 @@
     margin: 10px;
 }
 
-#footer {
+footer {
     grid-area: ft;
     margin: 10px;
     align-self: end;
@@ -32,10 +34,16 @@
     justify-content: center;
 }
 
-.image-sideBar {
-    width: 100px;
+/* .image-sideBar {
+    width: 200px;
     padding: 50px;
 }
+
+.image-post {
+    width: 400px;
+    padding: 5px;
+    align-self: center;
+} */
 
 .blog-container{
     display: grid;
@@ -58,7 +66,7 @@
     #main-container {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 200px 1fr 200px;
+        grid-template-rows: 300px 1fr 200px;
         grid-template-areas: 
         "hd hd hd hd hd hd hd hd"
         "cont cont cont cont cont cont cont cont"
@@ -70,7 +78,7 @@
     .content-container {
         display: grid;
         grid-template-columns: repeat(9, 1fr) ;
-        grid-template-rows: 400px 1fr;
+        grid-template-rows: 500px 1fr;
         grid-template-areas: 
         "sd sd sd sd sd sd sd sd sd "
         "blog blog blog blog blog blog blog blog blog";
@@ -93,12 +101,51 @@
 
 }
 
-/* MEDIA QUERY FOR LARGE SCREENS */
-@media (min-width: 1501px) {
+/* MEDIA QUERY FOR MEDIUM/LARGE SCREENS */
+@media (min-width: 1501px) and (max-width: 2500px) {
     #main-container {
         display: grid;
         grid-template-columns: repeat(8, 1fr);
-        grid-template-rows: 250px 1fr 150px;
+        grid-template-rows: 330px 1fr 200px;
+        grid-template-areas: 
+        "hd hd hd hd hd hd hd hd"
+        "cont cont cont cont cont cont cont cont"
+        "ft ft ft ft ft ft ft ft";
+        margin: 10px;
+        min-height: 100vh;
+    }
+
+    .content-container {
+
+        display: grid;
+        grid-template-columns: repeat(9, 1fr) ;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "sd sd blog blog blog blog blog blog margn";
+        justify-content: center;
+    }
+
+    .sidebar {
+        grid-area: sd;
+    }
+
+    .blog-container {
+        /* grid-area: blog;
+        flex-direction: row;
+        flex-wrap: wrap; */
+        grid-area: blog;
+        grid-template-columns: repeat(2, 1fr);
+          
+    }
+
+}
+
+/* MEDIA QUERY FOR LARGE SCREENS */
+@media (min-width: 2501px) {
+    #main-container {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: 350px 1fr 150px;
         grid-template-areas: 
         "hd hd hd hd hd hd hd hd"
         "cont cont cont cont cont cont cont cont"

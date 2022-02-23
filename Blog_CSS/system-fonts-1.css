@@ -41,6 +41,14 @@ a {
     padding: 5px;
 }
 
+
+
+  figcaption {
+      font-size: 18px;
+      width: 60%;
+  }
+
+  
 /* MEDIA QUERY FOR MEDIUM SCREENS */
 @media (min-width: 768px) and (max-width: 1000px) {
     h1 {
@@ -75,7 +83,7 @@ a {
     } 
 }
 
-/* MEDIA QUERY FOR MEDIUM SCREENS */
+/* MEDIA QUERY FOR LARGE SCREENS */
 @media (min-width: 1001px) {
     h1 {
         font-size: 60px;
@@ -86,11 +94,11 @@ a {
     }
     
     h3 {
-        font-size: 40px;
+        font-size: 48px;
     }
     
     p {
-        font-size: 32px;
+        font-size: 40px;
     }
     
     ul {
@@ -100,8 +108,12 @@ a {
     
     a {
         font-family: monospace;
-        font-size: 28px;
+        font-size: 38px;
         color: darkgreen;
     } 
+
+    figcaption {
+        font-size: 34px;
+    }
 }
 
