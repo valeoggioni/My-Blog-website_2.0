@@ -40,7 +40,7 @@
   }
 
   /* MEDIA QUERY FOR MEDIUM AND LARGE SCREENS */
-@media (min-width: 900px) {
+@media (min-width: 1500px) {
 
     .photo-item {
         width: 600px;
